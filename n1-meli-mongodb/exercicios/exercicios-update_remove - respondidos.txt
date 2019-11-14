@@ -1,0 +1,38 @@
+﻿Exercícios
+1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+
+Deixe todos os registros criados acima que estiverem como true para false, e vice-versa.
+
+db.alunas.update({"nasceuEmSp": "true"}, {$set:{"nasceuEmSp": "true"}})
+db.alunas.update({"nasceuEmSp" : "true"}, {$set :{"_id" : ObjectId("5dc0afcf44275b697974a0ff"),"_id" : ObjectId("5dc0b03516ef8bcbbd438a41")}}, {upsert : true})
+{ "_id" : ObjectId("5dc0afcf44275b697974a0ff"), "nasceuEmSp" : "false" }
+{ "_id" : ObjectId("5dc0afcf44275b697974a100"), "nasceuEmSp" : "true" }
+{ "_id" : ObjectId("5dc0b03516ef8bcbbd438a40"), "nasceuEmSp" : "true" }
+{ "_id" : ObjectId("5dc0b03516ef8bcbbd438a41"), "nasceuEmSp" : "false" }
+{ "_id" : ObjectId("5dc0b03516ef8bcbbd438a42"), "nasceuEmSp" : "true" }
+
+
+db.alunas.updateMany({"nasceuEmSP":"true"}, {$set : {"nasceuEmSP":"false", "trocou":"true"}})
+
+db.alunas.updateMany({"nasceuEmSP":"false", "trocou":{$exists:false}}, {$set: "nasceuEmSP":"true", "trocou":"true"}})
+
+
+db.alunas.updateMany({"nome":{$in:["Helena", "Sabrina", "Maria", "Aya"]}}, {$set : {"nasceuEmSP":"false"}})
+
+db.alunas.updateMany({"_id": {$in :["_id" : ObjectId("5dc0afcf44275b697974a0ff"),"_id" : ObjectId("5dc0b03516ef8bcbbd438a41")]}, {$set:{"nasceuEmSp":"true"})
+
+
+Atualize a data de nascimento de 2 alunas.
+
+Inclua pelo menos 3 livros que elas tenham lido.
+{ "_id" : ObjectId("5dc0afcf44275b697974a0fe") }
+{ "_id" : ObjectId("5dc0afcf44275b697974a0ff"), "nasceuEmSp" : "false" }
+
+2. Exclua 5 itens dada uma determinada condição:
+
+Por ordenação de inserção, os dois primeiros que foram inseridos.
+db.test.find().sort({nome:-1, tempo: 1}
+
+Por ordem alfabética, os dois primeiros.
+
+Por ordem de data de nascimento decrescente, a primeira data.

@@ -1,0 +1,191 @@
+﻿Aula Regex
+
+Nomes que contenham a letra "e" miniscula em qualquer lugar.
+db.alunas.find({"nome":/e/}).pretty()
+
+Nomes que contenham a letra "E" maiuscula em qualquer lugar
+db.alunas.find({"nome":/E/}).pretty()
+
+Nomes que contenham a letra "e" independente de ser maiuscula e minuscula em qualquer lugar.
+db.alunas.find({"nome":/e/i}).pretty()
+
+Qualquer nome que comece com a letra "a".
+db.alunas.find({"nome":/^a/i}).pretty()
+
+Encontrar palavras que contenham a letra no meio ou no final.
+db.alunas.find({"nome":/a$/i}).pretty()
+
+
+
+Respostas
+
+1 db.alunas.find({"livros.titulo": /Clean/}).pretty()
+(se digitar it aparece mais coisa)
+
+2 db.alunas.find({"livros.titulo": /s$/i}).pretty()
+
+3 ?
+
+4 db.alunas.find({$or:[{"nome": /k$/i}, {"nome": /o$/i}]}).pretty()
+  ---db.alunas.find({"nome":{$in:[a/i, /^h/i]}}).pretty()---
+
+5 db.alunas.find({"nome":/^a/i}).pretty()
+
+6 db.alunas.find({$or:[{"nome": /^a/i}, {"nome": /^h/i}]}).pretty()
+
+---------
+
+i = ignora se o que for pedido esta maiusculo ou minusculo.
+
+---------
+
+Aula 06/11
+
+db.alunas.count()
+conta quantas alunas tenho cadastrado e assim consigo ver quando incluiu.
+
+db.alunas.insert({"nome":"Thamires"})
+inclui uma nova aluna.
+
+db.alunas.find().limit(-1).pretty()
+encontrar a ultima aluna cadastrada
+
+db.alunas.find().limit(1).pretty()
+encontrar a primeira aluna cadastrada
+
+db.alunas.insertMany([{
+        "nome" : "Damiana",
+        "dateOfBirth" : "11/08/1987",
+        "nasceuEmSp" : "true",
+        "id" : 50,
+        "livros" : [
+                {
+                        "titulo" : "HTML",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "CSS",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "Design",
+                        "leu" : "true"
+                },
+                {
+                        "titulo" : "JavaScript",
+                        "leu" : "true"
+                }
+        ]
+},
+{
+      
+        "nome" : "Emiliana",
+        "dateOfBirth" : "11/09/1987",
+        "nasceuEmSp" : "true",
+        "id" : 51,
+        "livros" : [
+                {
+                        "titulo" : "Java",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "C#",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "MySQL",
+                        "leu" : "true"
+                },
+                {
+                        "titulo" : "MongoDB",
+                        "leu" : "true"
+                }
+        ]
+},
+{
+        
+        "nome" : "Betina",
+        "dateOfBirth" : "10/05/1987",
+        "nasceuEmSp" : "true",
+        "id" : 52,
+        "livros" : [
+                {
+                        "titulo" : "JavaScript",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "MongoDB",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "CSS",
+                        "leu" : "true"
+                },
+                {
+                        "titulo" : "MySQL",
+                        "leu" : "true"
+                }
+        ]
+},
+{
+        
+        "nome" : "Gabriele",
+        "dateOfBirth" : "11/02/1987",
+        "nasceuEmSp" : "false",
+        "id" : 53,
+        "livros" : [
+                {
+                        "titulo" : "HTML",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "Design",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "MongoDb",
+                        "leu" : "true"
+                },
+                {
+                        "titulo" : "JavaScript",
+                        "leu" : "true"
+                }
+        ]
+},
+{
+        
+        "nome" : "Janaina",
+        "dateOfBirth" : "03/03/1987",
+        "nasceuEmSp" : "false",
+        "id" : 54,
+        "livros" : [
+                {
+                        "titulo" : "MySQL",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "C#",
+                        "leu" : "false"
+                },
+                {
+                        "titulo" : "CSS",
+                        "leu" : "true"
+                },
+                {
+                        "titulo" : "JavasCript",
+                        "leu" : "true"
+                }
+        ]
+}])
+
+criar novas alunas com o combo completo.
+
+db.alunas.update({"nome":"Thamires"}, {$push:{"livro":{"titulo": "Harry Poter", "leu": "true"}}})
+incluir informacoes
+
+db.alunas.deleteOne() 
+deleta todo o objeto
+
+$set - atualiza
+
+$unset - cancela a atualizaçao

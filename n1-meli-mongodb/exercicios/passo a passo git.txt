@@ -1,0 +1,84 @@
+﻿$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        .vscode/
+        README.md
+        package-lock.json
+        package.json
+        server.js
+        src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git add .
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .vscode/launch.json
+        new file:   README.md
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   server.js
+        new file:   src/app.js
+        new file:   src/controllers/alunasController.js
+        new file:   src/controllers/professorasController.js
+        new file:   src/model/alunas.js
+        new file:   src/model/alunas.json
+        new file:   src/model/professoras.json
+        new file:   src/routes/alunasRoute.js
+        new file:   src/routes/index.js
+        new file:   src/routes/professorasRoute.js
+
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git remote add origin https://github.com/JuMRRibeiro/debugando.git
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git remote -v
+origin  https://github.com/JuMRRibeiro/debugando.git (fetch)
+origin  https://github.com/JuMRRibeiro/debugando.git (push)
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git commit -m 'debugando'
+[master (root-commit) 2e273fd] debugando
+ 15 files changed, 4136 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/launch.json
+ create mode 100644 README.md
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 server.js
+ create mode 100644 src/app.js
+ create mode 100644 src/controllers/alunasController.js
+ create mode 100644 src/controllers/professorasController.js
+ create mode 100644 src/model/alunas.js
+ create mode 100644 src/model/alunas.json
+ create mode 100644 src/model/professoras.json
+ create mode 100644 src/routes/alunasRoute.js
+ create mode 100644 src/routes/index.js
+ create mode 100644 src/routes/professorasRoute.js
+
+reprograma@BR0000004YW1SP2 MINGW64 ~/Desktop/Nova pasta/n1-meli-api-bd (master)
+$ git push origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (22/22), 28.24 KiB | 1.88 MiB/s, done.
+Total 22 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/JuMRRibeiro/debugando.git
+ * [new branch]      master -> master
